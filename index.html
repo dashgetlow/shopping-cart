@@ -1,13 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Git tutorial</title>
-  </head>
-  <body>
-    I am on the master branch. I am the only file. I just changed with nothing
-    to do with the 'dashiel' branch.
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Studio Supply: a small collection of colourful tools for your everyday ideas. A shopping cart demo.">
+  <title>Studio Supply — Make room for good ideas.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="js.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#collection">Skip to collection</a>
+  <div class="announcement">A LITTLE COLOUR. A LOT OF POSSIBILITY. <span>A demo shop, made for the everyday creative.</span></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Studio Supply home"><span class="brand-mark" aria-hidden="true">s.</span>studio supply<span class="brand-dot">®</span></a>
+    <nav aria-label="Main navigation"><a class="active" href="#collection">The collection</a><a href="contact.html">About the studio</a></nav>
+    <button class="bag-button" id="open-cart" aria-haspopup="dialog">Your bag <span id="cart-count">0</span></button>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">GOOD TOOLS. GREAT POSSIBILITIES.</p><h1 id="hero-title">Make room for<br>good <em>ideas.</em></h1><p>Thoughtful things for your desk, your day,<br class="desktop-break"> and whatever comes next.</p><a class="primary-button" href="#collection">Explore the collection <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18L18 6M6 6h12v12"/></svg></span></a><div class="hero-note"><span aria-hidden="true"><svg class="star-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4L33.4 6.6"/></svg></span> A fresh perspective starts with the little things.</div></div>
+      <div class="hero-art"><img src="assets/studio.svg" alt="An orange notebook, a lilac notebook, a cobalt pencil cup and pencils arranged on a warm yellow desk." width="760" height="620"><span class="art-label">OBJECTS FOR<br>AN INSPIRED EVERYDAY</span><span class="edition">THE EVERYDAY EDIT / 01</span></div>
+    </section>
+    <div class="values-strip"><span>Made for everyday ideas</span><span aria-hidden="true"><svg class="star-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4L33.4 6.6"/></svg></span><span>Colour outside the lines</span><span aria-hidden="true"><svg class="star-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4L33.4 6.6"/></svg></span><span>Find your next favourite</span><span aria-hidden="true"><svg class="star-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4L33.4 6.6"/></svg></span></div>
+    <section class="collection" id="collection" aria-labelledby="collection-title">
+      <div class="section-heading"><div><p class="eyebrow">SMALL THINGS, BIG POTENTIAL</p><h2 id="collection-title">The everyday essentials<span>.</span></h2></div><p>For the notes, the sketches,<br>and the next big thing.</p></div>
+      <div class="collection-toolbar"><div class="filters" role="group" aria-label="Filter products"><button class="selected" data-filter="all" aria-pressed="true">All objects</button><button data-filter="paper" aria-pressed="false">Paper goods</button><button data-filter="desk" aria-pressed="false">Desk essentials</button></div><span id="product-count">4 objects</span></div>
+      <div class="product-grid" id="products"></div>
+      <noscript><p>Enable JavaScript to browse products and try the shopping bag.</p></noscript>
+    </section>
+    <section class="closing-note"><span aria-hidden="true"><svg class="star-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4L33.4 6.6"/></svg></span><h2>A little less ordinary.<br>A little more you.</h2><p>Surround yourself with things<br>that make you want to make things.</p></section>
+  </main>
+  <footer><a class="brand" href="index.html">studio supply®</a><p>A creative shopping-cart project by Dash.</p><a href="contact.html">About this project <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18L18 6M6 6h12v12"/></svg></a><span>DEMO SHOP · NO REAL ORDERS</span></footer>
+  <dialog id="cart-dialog" aria-labelledby="bag-title">
+    <div class="cart-header"><div><p class="eyebrow">YOUR EVERYDAY EDIT</p><h2 id="bag-title">Your bag<span>.</span></h2></div><button class="icon-button" id="close-cart" aria-label="Close bag">×</button></div>
+    <div id="cart-items"></div>
+    <div class="cart-summary"><div><span>Subtotal</span><strong id="subtotal">£0.00</strong></div><p>Demo shop — no payment or shipping required.</p><button class="primary-button" id="checkout" disabled>Complete demo order <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18L18 6M6 6h12v12"/></svg></span></button><button class="text-button" id="continue-shopping">Continue exploring</button></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
 </html>
